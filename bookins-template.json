@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "templateId": "ecommerce",
+  "label": "Online Storefront & Member Catalog (Store Manager + Verified Buyer)",
+  "cardTitle": "Online Storefront & Catalog",
+  "cardBadge": "Manager + Buyer Roles",
+  "cardIcon": "🛍️",
+  "accentColor": "#059669",
+  "heroImageUrl": "assets/templates/tpl-ecommerce-store.jpg",
+  "paletteSwatches": [
+    "#059669",
+    "#f0fdf4",
+    "#b45309",
+    "#062c1e"
+  ],
+  "summary": "Warm artisan boutique storefront where Store Managers publish products and Verified Buyers place bot-free, zero-PII orders.",
+  "defaultTheme": "emerald_commerce",
+  "defaultHeadlineSuffix": "Member Storefront & Marketplace",
+  "defaultGoal": "Run a sybil-resistant web commerce store where Store Managers manage product listings and inventory, and amihuman-verified Buyers browse products and place orders keyed by their opaque PermSet handle.",
+  "defaultFeatures": [
+    "Public catalog showcase with featured collections, member perks, and pickup/shipping info",
+    "Store Manager PermSet console to add/edit catalog products, pricing, and fulfillment status",
+    "Verified Buyer PermSet catalog browser, order submission, and order status tracker",
+    "Bot-free purchasing enforced by public amihuman proof-of-humanity"
+  ],
+  "preserveDeveloperPages": true,
+  "defaultRoles": [
+    {
+      "roleKey": "store_manager",
+      "roleLabel": "Store Manager",
+      "purpose": "Create and manage product listings, pricing, inventory, and order fulfillment.",
+      "enrollmentPolicy": "issuer_only",
+      "scopeLabel": "Store / Department Tag (optional)"
+    },
+    {
+      "roleKey": "buyer",
+      "roleLabel": "Verified Buyer",
+      "purpose": "Browse member catalog, submit orders, and track order fulfillment under an opaque PermSet.",
+      "enrollmentPolicy": "self_enroll",
+      "scopeLabel": "Member Tier / Region Tag (optional)"
+    }
+  ],
+  "templateQuestions": [
+    {
+      "key": "featuredProducts",
+      "label": "1. Featured Starter Products or Packages (one per line)",
+      "placeholder": "e.g. Artisan Coffee Box — $28\nSeasonal Farm Share Basket — $45",
+      "hint": "Shown as featured catalog cards on the landing page and seeded into the store view.",
+      "defaultValue": "Signature Member Bundle — $39 · Curated weekly artisan essentials\nHand-Thrown Ceramic Mug & Tea Set — $44 · Limited small-batch release\nVIP Seasonal Reserve Box — $85 · Priority member allocation",
+      "multiline": true
+    },
+    {
+      "key": "productCategories",
+      "label": "2. Store Categories / Collections (comma-separated)",
+      "placeholder": "e.g. Featured Drops, Member Exclusives, Custom Orders, Order Status",
+      "hint": "Used to filter catalog listings and buyer orders in /home.",
+      "defaultValue": "Product Listing, Member Exclusive, Buyer Order, Fulfillment Update"
+    },
+    {
+      "key": "fulfillmentPolicy",
+      "label": "3. Pickup, Delivery & Ordering Policy",
+      "placeholder": "e.g. Same-day local pickup or privacy-preserving courier delivery.",
+      "hint": "Displayed on the storefront information bar.",
+      "defaultValue": "Order with your Verified Buyer PermSet—choose local pickup by handle code or private fulfillment."
+    },
+    {
+      "key": "memberPerksBanner",
+      "label": "4. Verified Member Perks & Guarantee",
+      "placeholder": "e.g. 100% bot-free drops · Zero customer mailing list harvesting",
+      "hint": "Highlighted in the storefront header.",
+      "defaultValue": "Bot-free member drops · Fair 1-human-1-order limits · Zero personal data stored in the shop"
+    }
+  ]
+}

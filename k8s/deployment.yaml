@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testpage-fe
+  namespace: app-testpage
+  labels:
+    app: testpage-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testpage-fe
+  template:
+    metadata:
+      labels:
+        app: testpage-fe
+    spec:
+      # No secrets are mounted: this is a static, public SPA.
+      containers:
+        - name: testpage-fe
+          image: ghcr.io/grokism/testpage-fe:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "10m"
+              memory: "32Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
